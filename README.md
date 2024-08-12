@@ -50,7 +50,9 @@ Para treinar o modelo com um arquivo CSV de jogos anteriores e salvar o modelo t
 python lotery.py --train games.csv --model model
 ```
 
-**OBS: NÃO INCLUA O FORMATO DO ARQUIVO NA CHAMADA POR LINHA DE COMANDO**
+Onde **'--model'** especifica o arquivo onde o modelo treinado será salvo.
+
+**OBS:** Não inclua o formato do arquivo do modelo na chamada do script.
 
 ### Gerar Sugestões de jogos
 
@@ -60,9 +62,9 @@ Para gerar sugestões de números usando um modelo treinado:
 python lotery.py --generate model --count 5
 ```
 
-Onde **'--count'** especifica quantos jogos sugeridos você deseja gerar.
+Onde **'--model'** especifica o arquivo do modelo treinado anteriormente e **'--count'** especifica quantos jogos sugeridos você deseja gerar (padrão é 1).
 
-**OBS: NÃO INCLUA O FORMATO DO ARQUIVO NA CHAMADA POR LINHA DE COMANDO**
+**OBS:** Também neste caso, não inclua o formato do arquivo do modelo na chamada do script.
 
 ## Contribuições
 
