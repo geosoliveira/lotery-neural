@@ -66,6 +66,10 @@ Onde **'--model'** especifica o arquivo do modelo treinado anteriormente e **'--
 
 **OBS:** Também neste caso, não inclua o formato do arquivo do modelo na chamada do script.
 
+## Atualização da amostra
+
+A cada novo sorteio, edite o arquivo **games.csv** inserindo os números do sorteio em uma nova linha. Os números devem estar separados com ponto-e-virgula. Depois disso, treine novamente o modelo antes de gerar sugestões de jogos.
+
 ## Contribuições
 
 Sinta-se à vontade para contribuir com melhorias para este projeto. Para começar, faça um fork do repositório e crie um pull request com suas alterações.
