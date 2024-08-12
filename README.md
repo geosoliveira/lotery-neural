@@ -49,6 +49,7 @@ Para treinar o modelo com um arquivo CSV de jogos anteriores e salvar o modelo t
 ```bash
 python lotery.py --train games.csv --model model
 ```
+
 Onde **'--model'** especifica o arquivo onde o modelo treinado será salvo.
 
 **OBS:** Não inclua o formato do arquivo do modelo na chamada do script.
@@ -60,6 +61,7 @@ Para gerar sugestões de números usando um modelo treinado:
 ```bash
 python lotery.py --generate model --count 5
 ```
+
 Onde **'--model'** especifica o arquivo do modelo treinado anteriormente e **'--count'** especifica quantos jogos sugeridos você deseja gerar (padrão é 1).
 
 **OBS:** Também neste caso, não inclua o formato do arquivo do modelo na chamada do script.
