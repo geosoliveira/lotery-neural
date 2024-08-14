@@ -4,7 +4,7 @@ Este projeto utiliza uma rede neural convolucional para prever posições em uma
 
 ## Estrutura do Projeto
 
-- `lotery.py`: Script principal que treina o modelo e gera números sugeridos.
+- `lotery.py`: *Script* principal que treina o modelo e gera números sugeridos.
 - `games.csv`: Arquivo de exemplo com dados de jogos anteriores (cada linha representa um conjunto de números jogados).
 - `model.keras`: Arquivo do modelo treinado a partir de 'games.csv'. Pode ser excluído e recriado com a opção '--train'
 - `requirements.txt`: Arquivo com as dependências necessárias para executar o projeto.
@@ -38,33 +38,35 @@ Instale as dependências necessárias com o comando abaixo:
 pip install -r requirements.txt
 ```
 
-## Execução do Script
+## Execução do *Script*
 
-O script pode ser executado com duas principais opções:
+O *script* pode ser executado com duas principais opções:
 
 ### Treinar o Modelo
 
 Para treinar o modelo com um arquivo CSV de jogos anteriores e salvar o modelo treinado:
 
 ```bash
-python lotery.py --train games.csv --model model
+python lotery.py --train games.csv --model "<nome_do_arquivo_modelo>" --key "<nome_do_arquivo_chave>.key"
 ```
 
-Onde **'--model'** especifica o arquivo onde o modelo treinado será salvo.
+Onde **'--model'** especifica o nome do arquivo onde o modelo treinado será salvo (sem formato).
 
-**OBS:** Não inclua o formato do arquivo do modelo na chamada do script.
+O comando acima gera o arquivo treinado especificado após **--model***, um arquivo auxiliar que garante a geração de jogos não repetidos e o arquivo que contém a chave para descriptografar esse arquivo auxiliar.
+
+**OBS:** Não inclua o formato do arquivo do modelo na chamada do *script*.
 
 ### Gerar Sugestões de jogos
 
 Para gerar sugestões de números usando um modelo treinado:
 
 ```bash
-python lotery.py --generate model --count 5
+python lotery.py --generate model --key "<nome_do_arquivo_chave>.key" --count 5
 ```
 
-Onde **'--model'** especifica o arquivo do modelo treinado anteriormente e **'--count'** especifica quantos jogos sugeridos você deseja gerar (padrão é 1).
+Onde **'--model'** especifica o arquivo do modelo treinado anteriormente, **'--key'** especifica o nome da chave criada anteriormente e **'--count'** especifica quantos jogos sugeridos você deseja gerar. Se **'--count'** não for fornecido, o número de sugestões geradas será 1.
 
-**OBS:** Também neste caso, não inclua o formato do arquivo do modelo na chamada do script.
+**OBS:** Também neste caso, não inclua o formato do arquivo do modelo na chamada do *script*.
 
 ## Atualização da amostra
 
