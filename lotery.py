@@ -70,7 +70,7 @@ def generate_suggestions(model_file, count):
     print(f"Modelo carregado de '{model_file_w_format}'")
     
     for i in range(count):
-        dummy_input = np.random.random((1, 5, 5, 1))  # Gerando uma matriz 5x5 com valores aleatórios
+        dummy_input = np.zeros((1, 5, 5, 1)) if i == 0 else np.random.random((1, 5, 5, 1))  # Gerando uma matriz 5x5 com valores aleatórios a partir do segundo jogo
         
         predicted = model.predict(dummy_input)
         predicted_matrix = predicted.reshape(5, 5)
