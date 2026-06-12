@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lotery-neural"
+version = "0.1.0"
+description = "Experimento com rede neural e baselines estatísticos para sugestões da Lotofácil."
+readme = "README.md"
+requires-python = ">=3.12,<3.14"
+dependencies = [
+  "keras>=3.4",
+  "numpy>=1.26",
+  "pandas>=2.2",
+  "tensorflow>=2.17",
+]
+
+[project.scripts]
+lotery-neural = "lotery_neural.lotery_cli:main"
+
+[tool.setuptools.packages.find]
+include = ["lotery_neural*"]
+
+[tool.unittest]
+start-directory = "tests"
